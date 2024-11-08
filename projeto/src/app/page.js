@@ -9,7 +9,11 @@ export default function Home() {
       <h1>Página Principal</h1>
       <p>Parágrafo da página principal</p>
       <p>Autor: {nome}</p>
-      <Image src="/images/pin.jpg" alt="Imagem de pinguins" width={600} height={400} />
+      <Image 
+        className={styles.imagem}
+        src="/images/pin.jpg" alt="Imagem de pinguins"
+        width={600} 
+        height={400} />
     </div>
   );
 }
