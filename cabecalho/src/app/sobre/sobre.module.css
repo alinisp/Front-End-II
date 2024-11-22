@@ -1,7 +1,9 @@
 .paragrafo{
-    background-color: aqua;
+    background-color: #b7ceda;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #paragrafoUnico{
-    background-color: rgb(0, 74, 185);
+    background-color: #489ecc;
+    font-family: Arial, Helvetica, sans-serif;
 }

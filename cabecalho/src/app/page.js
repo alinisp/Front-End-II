@@ -6,8 +6,8 @@ export default function Home() {
   const nome = 'Alini'
   return (
     <div >
-      <h1>Página Principal</h1>
-      <p>Parágrafo da página principal</p>
+      <h1>Pinguins de Madagascar!</h1>
+      <p>Membros: Capitão, Recruta, Kowalski e Rico</p>
       <p>Autor: {nome}</p>
       <Image 
         className={styles.imagem}
