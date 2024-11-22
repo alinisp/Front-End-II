@@ -1,8 +1,9 @@
 .jabu{
-    background-color: blue;
+    background-color: green;
     justify-content: center;
     text-align: center;
     align-items: center;
+    flex-direction: row;
 }
 
 .ancora{
