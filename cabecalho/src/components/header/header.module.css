@@ -1,5 +1,4 @@
-.jabu{
-    padding: 12px;
+.li {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -7,15 +6,29 @@
     gap: 12px;
     list-style-type: none;
     background-color: #b7ceda;
-    border-radius: 10px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.link{
-    text-decoration: none;
-    color: rgb(24, 81, 155);
-    font-weight: bold;
+    border-radius: 5px;
+    height: 40px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #b7ceda;
+}
+
+.me {
+    border-radius: 5px;
+}
