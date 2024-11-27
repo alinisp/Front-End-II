@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Header() {
     const [showMenu, setShowMenu] = useState(true)
     return (
-        <header>
+        <header className={styles.li}>
             <button onClick={() => setShowMenu(!showMenu)}>
                 <Image className={styles.rat}
                     src="/menu.png"
