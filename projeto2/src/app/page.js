@@ -5,12 +5,12 @@ export default function Home() {
   const nome = 'Alini Perroni'
   return (
     <div >
-      <h1>Clínica Médica</h1>
+      <h1 className={styles.tit}>Clínica Médica</h1>
       <p>Clínica psiquiatrica </p>
       <p>Médica: {nome}</p>
       <Image 
         className={styles.imagem}
-        src="/images/image.png" alt="Imagem de pinguins"
+        src="" alt="Imagem de pinguins"
         width={600} 
         height={400} />
     </div>
