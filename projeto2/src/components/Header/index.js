@@ -16,22 +16,22 @@ export default function Header() {
       <h2 className={styles.agadois}>Clínica Plenitude</h2>
       <nav>
         <ul className={styles.navList}>
-          <li><Link href='/'>Home</Link> </li>
-          <li className={styles.link}>
+          <li><Link href='/'>Home</Link></li>
+          <li className={styles.item}> {/* Adicionei a classe "item" aqui */}
             <Link href='/medico' className={styles.link}>Médico</Link>
             <ul className={styles.submenu}>
-                <li className={styles.subitem}>
-                  <Link href="/medico/agenda" className={styles.sublink}>Listar</Link>
-                </li>
-                <li className={styles.subitem}>
-                  <Link href="/medico/criar" className={styles.sublink}>Criar</Link>
-                </li>
-                <li className={styles.subitem}>
-                  <Link href="/medico/editar" className={styles.sublink}>editar</Link>
-                </li>
-                <li className={styles.subitem}>
-                  <Link href="/medico/Excluir" className={styles.sublink}>Excluir</Link>
-                </li>
+              <li className={styles.subitem}>
+                <Link href="/medico/agenda" className={styles.sublink}>Listar</Link>
+              </li>
+              <li className={styles.subitem}>
+                <Link href="/medico/criar" className={styles.sublink}>Criar</Link>
+              </li>
+              <li className={styles.subitem}>
+                <Link href="/medico/editar" className={styles.sublink}>Editar</Link>
+              </li>
+              <li className={styles.subitem}>
+                <Link href="/medico/excluir" className={styles.sublink}>Excluir</Link>
+              </li>
             </ul>
           </li>
           <li><Link href='/paciente'>Paciente</Link></li>
