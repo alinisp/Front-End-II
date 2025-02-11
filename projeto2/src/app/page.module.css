@@ -1,6 +1,11 @@
-.tit{
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  color: rgb(56, 130, 143) ;
+.h1{
+  color: #b7ceda;
+  margin-top: 100px;
+
+
+}
+
+.p{
+  text-align: center;
+  font-size: 15px;
 }

@@ -1,9 +1,11 @@
 'use client';
 import Link from "next/link";
 import styles from "./header.module.css";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Header() {
+  const [showMenu, setShowMenu] = useState(true)
   return (
     <header className={styles.header}>
       <Image
@@ -14,30 +16,37 @@ export default function Header() {
         height={40}
       />
       <h2 className={styles.agadois}>Clínica Plenitude</h2>
-      <nav>
-        <ul className={styles.navList}>
-          <li><Link href='/'>Home</Link></li>
-          <li className={styles.item}> {/* Adicionei a classe "item" aqui */}
-            <Link href='/medico' className={styles.link}>Médico</Link>
-            <ul className={styles.submenu}>
-              <li className={styles.subitem}>
-                <Link href="/medico/agenda" className={styles.sublink}>Listar</Link>
-              </li>
-              <li className={styles.subitem}>
-                <Link href="/medico/criar" className={styles.sublink}>Criar</Link>
-              </li>
-              <li className={styles.subitem}>
-                <Link href="/medico/editar" className={styles.sublink}>Editar</Link>
-              </li>
-              <li className={styles.subitem}>
-                <Link href="/medico/excluir" className={styles.sublink}>Excluir</Link>
-              </li>
-            </ul>
-          </li>
-          <li><Link href='/paciente'>Paciente</Link></li>
-          <li><Link href='/consulta'>Consulta</Link></li>
+      <nav className={styles.nav}>
+        <ul className={styles.menu}>
+            <li className={styles.item}>
+                <a href="#" className={styles.link}>Médico</a>
+                <ul className={styles.submenu}>
+                    <li><a href="/medico" className={styles.submenuItem}>Listar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Editar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
+                </ul>
+            </li>
+            <li className={styles.item}>
+                <a href="#" className={styles.link}>Paciente</a>
+                <ul className={styles.submenu}>
+                    <li><a href="#" className={styles.submenuItem}>Listar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Editar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
+                </ul>
+            </li>
+            <li className={styles.item}>
+                <a href="#" className={styles.link}>Consulta</a>
+                <ul className={styles.submenu}>
+                    <li><a href="#" className={styles.submenuItem}>Listar Consultas</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Agendar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Reagendar</a></li>
+                    <li><a href="#" className={styles.submenuItem}>Cancelar</a></li>
+                </ul>
+            </li>
         </ul>
-      </nav>
+    </nav>
     </header>
   );
 }
