@@ -15,38 +15,40 @@ export default function Header() {
         width={40}
         height={40}
       />
-      <h2 className={styles.agadois}>Clínica Plenitude</h2>
       <nav className={styles.nav}>
         <ul className={styles.menu}>
-            <li className={styles.item}>
-                <a href="#" className={styles.link}>Médico</a>
-                <ul className={styles.submenu}>
-                    <li><a href="/medico" className={styles.submenuItem}>Listar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Editar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
-                </ul>
-            </li>
-            <li className={styles.item}>
-                <a href="#" className={styles.link}>Paciente</a>
-                <ul className={styles.submenu}>
-                    <li><a href="#" className={styles.submenuItem}>Listar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Editar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
-                </ul>
-            </li>
-            <li className={styles.item}>
-                <a href="#" className={styles.link}>Consulta</a>
-                <ul className={styles.submenu}>
-                    <li><a href="#" className={styles.submenuItem}>Listar Consultas</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Agendar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Reagendar</a></li>
-                    <li><a href="#" className={styles.submenuItem}>Cancelar</a></li>
-                </ul>
-            </li>
+          <li className={styles.item}>
+            <a href="/" className={styles.link}>Home</a>
+          </li>
+          <li className={styles.item}>
+            <a href="#" className={styles.link}>Médico</a>
+            <ul className={styles.submenu}>
+              <li><a href="/medico" className={styles.submenuItem}>Listar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Editar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
+            </ul>
+          </li>
+          <li className={styles.item}>
+            <a href="#" className={styles.link}>Paciente</a>
+            <ul className={styles.submenu}>
+              <li><a href="#" className={styles.submenuItem}>Listar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Adicionar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Editar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Excluir</a></li>
+            </ul>
+          </li>
+          <li className={styles.item}>
+            <a href="#" className={styles.link}>Consulta</a>
+            <ul className={styles.submenu}>
+              <li><a href="#" className={styles.submenuItem}>Listar Consultas</a></li>
+              <li><a href="#" className={styles.submenuItem}>Agendar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Reagendar</a></li>
+              <li><a href="#" className={styles.submenuItem}>Cancelar</a></li>
+            </ul>
+          </li>
         </ul>
-    </nav>
+      </nav>
     </header>
   );
 }

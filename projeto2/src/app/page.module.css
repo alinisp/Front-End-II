@@ -1,8 +1,9 @@
 .h1{
   color: #b7ceda;
   margin-top: 100px;
-
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .p{

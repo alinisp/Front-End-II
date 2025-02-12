@@ -9,13 +9,16 @@
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .agadois {
-  color: #0089d3;
+  color: #768f9b;
+  font-size: 30px;
+  justify-content: left;
+  text-align: left;
 }
 
 .navList {
@@ -38,7 +41,6 @@
   position: relative;
 }
 
-/* Links principais */
 .link {
   text-decoration: none;
   color: white;
@@ -50,14 +52,12 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Efeito ao passar o mouse */
 .link:hover {
   background-color: rgb(255, 255, 255);
   color: #b7ceda;
   border-radius: 8px;
 }
 
-/* Submenu */
 .submenu {
   display: none;
   position: absolute;
@@ -72,12 +72,10 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Mostrar submenu ao passar o mouse */
 .item:hover .submenu {
   display: flex;
 }
 
-/* Itens do submenu */
 .submenuItem {
   padding: 8px 15px;
   font-size: 14px;
@@ -87,14 +85,12 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Hover dos itens do submenu */
 .submenuItem:hover {
   background-color: rgb(255, 255, 255);
   color: #b7ceda;
   border-radius: 8px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .nav {
       flex-direction: column;
