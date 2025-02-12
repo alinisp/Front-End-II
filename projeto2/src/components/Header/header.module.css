@@ -59,6 +59,7 @@
 }
 
 .submenu {
+  text-decoration: none;
   display: none;
   position: absolute;
   background-color: #b7ceda;
