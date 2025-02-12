@@ -94,24 +94,24 @@
 
 @media (max-width: 768px) {
   .nav {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .menu {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .item {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
 
   .submenu {
-      width: 100%;
-      position: relative;
-      text-align: left;
+    width: 100%;
+    position: relative;
+    text-align: left;
   }
 }
