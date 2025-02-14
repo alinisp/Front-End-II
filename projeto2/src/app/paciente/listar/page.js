@@ -28,7 +28,7 @@ export default function ListarPaciente() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1 style={{color: "rgb(124, 22, 22)" }}>Lista de Pacientes</h1>
+      <h1 style={{color: "#768f9b" }}>Lista de Pacientes</h1>
       <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
         <input
           type="text"
@@ -46,7 +46,7 @@ export default function ListarPaciente() {
       </div>
       <table border="1" width="100%" style={{ borderCollapse: "collapse", marginTop: "20px" }}>
         <thead>
-          <tr style={{ backgroundColor: "rgb(124, 22, 22)", color:"white" }}>
+          <tr style={{ backgroundColor: "#768f9b", color:"white" }}>
             <th>ID</th>
             <th>Nome</th>
             <th>Telefone</th>

@@ -21,7 +21,7 @@ export default function ListarConsulta() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1 style={{ textAlign: "center", color: "rgb(124, 22, 22)"}}>Lista de Consultas</h1>
+      <h1 style={{ textAlign: "center", color: "#768f9b"}}>Lista de Consultas</h1>
 
       
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "15px", marginTop: "20px" }}>
@@ -59,7 +59,7 @@ export default function ListarConsulta() {
 
       <table border="1" width="100%" style={{ borderCollapse: "collapse", marginTop: "20px" }}>
         <thead>
-          <tr style={{ backgroundColor: "rgb(124, 22, 22)", color:"white" }}>
+          <tr style={{ backgroundColor: "#768f9b", color:"white" }}>
             <th>ID</th>
             <th>Médico</th>
             <th>Especialidade</th>
