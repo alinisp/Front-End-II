@@ -10,3 +10,15 @@
   text-align: center;
   font-size: 15px;
 }
+
+.paragrafo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
