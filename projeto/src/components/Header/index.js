@@ -18,6 +18,7 @@ export default function Header() {
                         <li><Link href='/props'>Props</Link></li>
                         <li><Link href='/filter'>filter</Link></li>
                         <li><Link href='/efeitos'>Efeitos</Link></li>
+                        <li><Link href='/state'>State</Link></li>
                     </ul>
                 </nav>
             }
