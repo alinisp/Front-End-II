@@ -1,24 +1,35 @@
-.h1{
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.h1 {
   color: #b7ceda;
-  margin-top: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 50px; /* Ajuste para telas menores */
+  font-size: 2rem; /* Tamanho responsivo */
 }
 
-.p{
-  text-align: center;
-  font-size: 15px;
+.paragrafo {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.paragrafo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.divi {
+  margin-top: 20px;
 }
-.divi{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+  .h1 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+
+  .paragrafo {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
 }
