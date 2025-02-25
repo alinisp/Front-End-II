@@ -18,13 +18,13 @@ export default function ListarConsulta() {
   return (
     <div style={{ padding: "20px" }}>
       <h1 style={{ textAlign: "center", color: "#768f9b" }}>Lista de Consultas</h1>
-      <div 
-        style={{ 
-          display: "flex", 
-          flexDirection: "column", 
-          alignItems: "center", 
-          gap: "15px", 
-          marginTop: "20px" 
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "15px",
+          marginTop: "20px"
         }}
       >
         <input
@@ -33,7 +33,7 @@ export default function ListarConsulta() {
           value={buscaPaciente}
           onChange={(e) => setBuscaPaciente(e.target.value)}
           style={{
-            width: "50%", 
+            width: "50%",
             height: "40px",
             fontSize: "18px",
             padding: "10px",
@@ -48,7 +48,7 @@ export default function ListarConsulta() {
           value={buscaMedico}
           onChange={(e) => setBuscaMedico(e.target.value)}
           style={{
-            width: "50%", 
+            width: "50%",
             height: "40px",
             fontSize: "18px",
             padding: "10px",
@@ -58,14 +58,14 @@ export default function ListarConsulta() {
           }}
         />
       </div>
-    
+
       <div style={{ overflowX: "auto", marginTop: "20px" }}>
-        <table 
-          border="1" 
-          width="100%" 
-          style={{ 
-            borderCollapse: "collapse", 
-            minWidth: "600px"  
+        <table
+          border="1"
+          width="100%"
+          style={{
+            borderCollapse: "collapse",
+            minWidth: "600px"
           }}
         >
           <thead>
@@ -78,8 +78,13 @@ export default function ListarConsulta() {
             </tr>
           </thead>
           <tbody>
-            {consultasFiltradas.map((consulta) => (
-              <tr key={consulta.id}>
+            {consultasFiltradas.map((consulta, index) => (
+              <tr
+                key={consulta.id}
+                style={{
+                  backgroundColor: index % 2 === 0 ? "white" : "#f2f7fa", 
+                }}
+              >
                 <td>{consulta.id}</td>
                 <td>{consulta.medico}</td>
                 <td>{consulta.especialidade}</td>

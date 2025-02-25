@@ -47,9 +47,9 @@ export default function ListarMedicos() {
         <table
           border="1"
           width="100%"
-          style={{ 
-            borderCollapse: "collapse", 
-            minWidth: "600px" 
+          style={{
+            borderCollapse: "collapse",
+            minWidth: "600px"
           }}
         >
           <thead>
@@ -62,8 +62,13 @@ export default function ListarMedicos() {
             </tr>
           </thead>
           <tbody>
-            {medicosFiltrados.map((medico) => (
-              <tr key={medico.id}>
+            {medicosFiltrados.map((medico, index) => (
+              <tr
+                key={medico.id}
+                style={{
+                  backgroundColor: index % 2 === 0 ? "white" : "#f2f7fa",
+                }}
+              >
                 <td>{medico.id}</td>
                 <td>{medico.nome}</td>
                 <td>{medico.telefone}</td>

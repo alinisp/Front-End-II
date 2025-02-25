@@ -23,8 +23,8 @@ export default function ListarPaciente() {
   };
   return (
     <div style={{ padding: "20px" }}>
-      <h1 style={{ color: "#768f9b" }}>Lista de Pacientes</h1>
-      <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+      <h1 style={{ textAlign: "center", color: "#768f9b" }}>Lista de Pacientes</h1>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
         <input
           type="text"
           placeholder="Buscar paciente por nome"
@@ -41,7 +41,15 @@ export default function ListarPaciente() {
       </div>
 
       <div style={{ overflowX: "auto" }}>
-        <table border="1" width="100%" style={{ borderCollapse: "collapse", marginTop: "20px", minWidth: "600px" }}>
+        <table
+          border="1"
+          width="100%"
+          style={{
+            borderCollapse: "collapse",
+            marginTop: "20px",
+            minWidth: "600px",
+          }}
+        >
           <thead>
             <tr style={{ backgroundColor: "#768f9b", color: "white" }}>
               <th>ID</th>
@@ -52,8 +60,13 @@ export default function ListarPaciente() {
             </tr>
           </thead>
           <tbody>
-            {pacientesFiltrados.map((paciente) => (
-              <tr key={paciente.id}>
+            {pacientesFiltrados.map((paciente, index) => (
+              <tr
+                key={paciente.id}
+                style={{
+                  backgroundColor: index % 2 === 0 ? "white" : "#f2f7fa",
+                }}
+              >
                 <td>{paciente.id}</td>
                 <td>{paciente.nome}</td>
                 <td>{paciente.telefone}</td>

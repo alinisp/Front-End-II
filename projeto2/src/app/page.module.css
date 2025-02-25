@@ -1,6 +1,11 @@
 .container {
   padding: 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 70px;
 }
 
 .h1 {
@@ -10,8 +15,8 @@
 }
 
 .paragrafo {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.2rem;
+  line-height: 1.6; 
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
