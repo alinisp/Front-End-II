@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false); // Estado para controlar a visibilidade do menu
+  const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -24,12 +24,10 @@ export default function Header() {
         <h2 className={styles.agadois}>Clínica Plenitude</h2>
       </div>
 
-      {/* Botão do menu para mobile */}
       <button className={styles.menuButton} onClick={toggleMenu}>
         ☰
       </button>
 
-      {/* Menu de navegação */}
       <nav className={`${styles.nav} ${showMenu ? styles.showMenu : ''}`}>
         <ul className={styles.menu}>
           <li className={styles.item}>
@@ -57,7 +55,7 @@ export default function Header() {
             <a href="#" className={styles.link}>Consulta</a>
             <ul className={styles.submenu}>
               <li><a href="/consulta/listar" className={styles.submenuItem}>Listar Consultas</a></li>
-              <li><a href="#" className={styles.submenuItem}>Agendar</a></li>
+              <li><a href="/consulta/agendar" className={styles.submenuItem}>Agendar</a></li>
               <li><a href="#" className={styles.submenuItem}>Reagendar</a></li>
               <li><a href="#" className={styles.submenuItem}>Cancelar</a></li>
             </ul>

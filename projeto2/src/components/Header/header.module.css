@@ -26,7 +26,7 @@
 }
 
 .menuButton {
-  display: none; /* Esconder o botão em telas maiores */
+  display: none; 
   background: none;
   border: none;
   font-size: 24px;
@@ -105,11 +105,11 @@
 
 @media (max-width: 768px) {
   .menuButton {
-    display: block; /* Mostrar o botão em telas menores */
+    display: block; 
   }
 
   .nav {
-    display: none; /* Ocultar o menu por padrão em telas menores */
+    display: none; 
     flex-direction: column;
     position: absolute;
     top: 65px;
@@ -120,7 +120,7 @@
   }
 
   .nav.showMenu {
-    display: flex; /* Mostrar o menu quando a classe showMenu estiver ativa */
+    display: flex;
   }
 
   .menu {

@@ -39,7 +39,7 @@ export default function ListarPaciente() {
           }}
         />
       </div>
-      {/* Container com barra de rolagem horizontal */}
+
       <div style={{ overflowX: "auto" }}>
         <table border="1" width="100%" style={{ borderCollapse: "collapse", marginTop: "20px", minWidth: "600px" }}>
           <thead>

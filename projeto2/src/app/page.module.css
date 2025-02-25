@@ -5,8 +5,8 @@
 
 .h1 {
   color: #b7ceda;
-  margin-top: 50px; /* Ajuste para telas menores */
-  font-size: 2rem; /* Tamanho responsivo */
+  margin-top: 50px; 
+  font-size: 2rem; 
 }
 
 .paragrafo {
@@ -21,7 +21,6 @@
   margin-top: 20px;
 }
 
-/* Estilos para telas menores que 768px */
 @media (max-width: 768px) {
   .h1 {
     margin-top: 20px;

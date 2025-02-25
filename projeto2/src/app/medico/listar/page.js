@@ -42,14 +42,14 @@ export default function ListarMedicos() {
           }}
         />
       </div>
-      {/* Container com barra de rolagem horizontal */}
+
       <div style={{ overflowX: "auto", marginTop: "20px" }}>
         <table
           border="1"
           width="100%"
           style={{ 
             borderCollapse: "collapse", 
-            minWidth: "600px" /* Ajuste conforme a necessidade */
+            minWidth: "600px" 
           }}
         >
           <thead>
