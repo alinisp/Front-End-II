@@ -1,153 +1,123 @@
-'use client';
-import { useState } from "react";
-import { useRouter } from 'next/navigation';
-export default function AgendarConsulta() {
-  const [medico, setMedico] = useState("");
-  const [especialidade, setEspecialidade] = useState("");
-  const [paciente, setPaciente] = useState("");
-  const [tipo, setTipo] = useState("");
-  const [dataConsulta, setDataConsulta] = useState("");
-  const router = useRouter();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Cria o objeto com os dados da nova consulta
-    const novaConsulta = {
-      medico,
-      especialidade,
-      paciente,
-      tipo,
-      dataConsulta,
-    };
-    try {
-      const response = await fetch("https://api-clinica-2a.onrender.com/consultas", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(novaConsulta),
-      });
-      if (response.ok) {
-        alert("Consulta agendada com sucesso!");
-        router.push("/listarConsulta"); // Redireciona para a página de listagem de consultas
-      } else {
-        alert("Houve um erro ao agendar a consulta. Por favor, tente novamente.");
-      }
-    } catch (error) {
-      console.error("Erro ao agendar consulta:", error);
-      alert("Erro ao agendar consulta. Verifique o console para mais detalhes.");
+"use client";
+import { useState, useEffect } from "react";
+
+export default function CadastroConsulta() {
+  const [pacientes, setPacientes] = useState([]);
+  const [medicos, setMedicos] = useState([]);
+  const [formData, setFormData] = useState({
+    paciente: "",
+    medico: "",
+    especialidade: "",
+    data: "",
+    horario: "",
+    tipo: ""
+  });
+  const [confirmado, setConfirmado] = useState(false);
+
+  useEffect(() => {
+    fetch("https://api-clinica-2a.onrender.com/pacientes")
+      .then(response => response.ok ? response.json() : [])
+      .then(data => setPacientes(Array.isArray(data) ? data : [data]));
+  }, []);
+
+  useEffect(() => {
+    fetch("https://api-clinica-2a.onrender.com/medicos")
+      .then(response => response.ok ? response.json() : [])
+      .then(data => setMedicos(Array.isArray(data) ? data : [data]));
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let updatedFormData = { ...formData, [name]: value };
+    
+    if (name === "medico") {
+      const selectedMedico = medicos.find(medico => medico.id === Number(value));
+      updatedFormData.especialidade = selectedMedico ? selectedMedico.especialidade : "";
     }
+    
+    setFormData(updatedFormData);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setConfirmado(true);
+  };
+
+  const inputStyle = {
+    width: "100%",
+    height: "40px",
+    fontSize: "18px",
+    padding: "10px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    outline: "none",
+  };
+
   return (
-    <div style={{ padding: "20px" }}>
-      {/* Div centralizada para o título */}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <h1 style={{ color: "#768f9b" }}>Agendar Consulta</h1>
-      </div>
+    <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
+      <h1 style={{ textAlign: "center", color: "#768f9b" }}>Agendar Consulta</h1>
       <form
         onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "15px",
-          marginTop: "20px",
-        }}
+        style={{ display: "flex", flexDirection: "column", gap: "15px", marginTop: "20px" }}
       >
-        <input
-          type="text"
-          placeholder="Nome do Médico"
-          value={medico}
-          onChange={(e) => setMedico(e.target.value)}
-          required
-          style={{
-            width: "50%",
-            height: "40px",
-            fontSize: "18px",
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            outline: "none",
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Especialidade"
-          value={especialidade}
-          onChange={(e) => setEspecialidade(e.target.value)}
-          required
-          style={{
-            width: "50%",
-            height: "40px",
-            fontSize: "18px",
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            outline: "none",
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Nome do Paciente"
-          value={paciente}
-          onChange={(e) => setPaciente(e.target.value)}
-          required
-          style={{
-            width: "50%",
-            height: "40px",
-            fontSize: "18px",
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            outline: "none",
-          }}
-        />
-        <input
-          type="text"
-          placeholder="Tipo da Consulta"
-          value={tipo}
-          onChange={(e) => setTipo(e.target.value)}
-          required
-          style={{
-            width: "50%",
-            height: "40px",
-            fontSize: "18px",
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            outline: "none",
-          }}
-        />
-        <input
-          type="datetime-local"
-          placeholder="Data e Hora"
-          value={dataConsulta}
-          onChange={(e) => setDataConsulta(e.target.value)}
-          required
-          style={{
-            width: "50%",
-            height: "40px",
-            fontSize: "18px",
-            padding: "10px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            outline: "none",
-          }}
-        />
-        <button
-          type="submit"
-          style={{
-            padding: "10px 20px",
-            fontSize: "16px",
-            borderRadius: "8px",
-            backgroundColor: "#768f9b",
-            color: "white",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
+        <label style={{fontSize: "18px" }}>Paciente</label>
+        <select name="paciente" value={formData.paciente} onChange={handleChange} required style={inputStyle}>
+          <option value="">Selecione um Paciente</option>
+          {pacientes.map(paciente => (
+            <option key={paciente.id} value={paciente.id}>{paciente.nome}</option>
+          ))}
+        </select>
+
+        <label style={{fontSize: "18px" }}>Médico</label>
+        <select name="medico" value={formData.medico} onChange={handleChange} required style={inputStyle}>
+          <option value="">Selecione um Médico</option>
+          {medicos.map(medico => (
+            <option key={medico.id} value={medico.id}>{medico.nome}</option>
+          ))}
+        </select>
+
+        <label style={{fontSize: "18px" }}>Especialidade</label>
+        <input type="text" name="especialidade" value={formData.especialidade} readOnly style={inputStyle} />
+
+        <label style={{fontSize: "18px" }}>Data</label>
+        <input type="date" name="data" value={formData.data} onChange={handleChange} required style={inputStyle} />
+
+        <label style={{fontSize: "18px" }}>Hora</label>
+        <input type="time" name="horario" value={formData.horario} onChange={handleChange} required style={inputStyle} />
+
+        <label style={{fontSize: "18px" }}>Tipo</label>
+        <select name="tipo" value={formData.tipo} onChange={handleChange} required style={inputStyle}>
+          <option value="">Plano de Saúde ou Particular?</option>
+          <option value="Plano de Saúde">Plano de Saúde</option>
+          <option value="Particular">Particular</option>
+        </select>
+
+        <button type="submit" style={{ backgroundColor: "#215775", color: "white", padding: "15px", borderRadius: "8px", cursor: "pointer", fontSize: "18px" }}>
           Agendar Consulta
         </button>
       </form>
+
+      {confirmado && (
+        <div style={{
+          backgroundColor: "#fff",
+          boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
+          padding: "15px",
+          marginTop: "20px",
+          borderRadius: "8px",
+          textAlign: "center"
+        }}>
+          <h3 style={{ color: "#13425c" }}>Consulta Agendada</h3>
+          <p><strong>Paciente:</strong> {pacientes.find(p => p.id == formData.paciente)?.nome}</p>
+          <p><strong>Médico:</strong> {medicos.find(m => m.id == formData.medico)?.nome}</p>
+          <p><strong>Especialidade:</strong> {formData.especialidade}</p>
+          <p><strong>Data:</strong> {formData.data}</p>
+          <p><strong>Hora:</strong> {formData.horario}</p>
+          <p><strong>Tipo:</strong> {formData.tipo}</p>
+          <button onClick={() => setConfirmado(false)} style={{ marginTop: "10px", backgroundColor: "#ccc", padding: "10px", borderRadius: "5px", cursor: "pointer" }}>
+            Fechar
+          </button>
+        </div>
+      )}
     </div>
   );
 }
